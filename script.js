@@ -1,4 +1,5 @@
 const body = document.querySelector('body');
+const p = document.querySelector('#headPara');
 const div = document.createElement('div');
 const resultPara = document.createElement('p');
 const buttons = document.querySelectorAll('button');
@@ -39,8 +40,11 @@ buttons.forEach(button => {button.addEventListener('click', () =>
     if (result === 1) {playerScore += 1;};
     console.log(computerScore, playerScore);
     round += 1; console.log(round);
-    if (round === 5) {resultPara.textContent = `Game Over! Player Score: ${playerScore}. Computer Score: ${computerScore}.`;
-        div.appendChild(resultPara);};})});
+    if (computerScore === 5 || playerScore === 5) 
+    {resultPara.textContent = `Game over! Player score: ${playerScore}. 
+    Computer score: ${computerScore}. 
+    Rounds taken: ${round}.`;
+    div.appendChild(resultPara); round = 0; computerScore = 0, playerScore = 0; p.textContent = 'Press any button to continue playing: ';}})});
 
 
 // function game() {
