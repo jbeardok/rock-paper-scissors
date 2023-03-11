@@ -3,6 +3,7 @@ const p = document.querySelector('#headPara');
 const div = document.createElement('div');
 const resultPara = document.createElement('p');
 const buttons = document.querySelectorAll('button');
+
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
     let int = Math.floor(Math.random() * 3);
@@ -45,21 +46,3 @@ buttons.forEach(button => {button.addEventListener('click', () =>
     Computer score: ${computerScore}. 
     Rounds taken: ${round}.`;
     div.appendChild(resultPara); round = 0; computerScore = 0, playerScore = 0; p.textContent = 'Press any button to continue playing: ';}})});
-
-
-// function game() {
-//     let computerScore;
-//     let playerScore;
-//     let result;
-//     for (let i=0; i<5; i++) {
-//         buttons.forEach(button => {button.addEventListener('click', () => 
-//         {result = playRound(button.id, getComputerChoice())})});
-//         if (result === -1) {computerScore += 1;}
-//         else if (result === 1) {playerScore += 1;}
-//         else {continue;}
-//     }
-//     if (playerScore > computerScore) {console.log('player wins')}
-//     else if (playerScore < computerScore) {console.log('computer wins')}
-//     else {console.log('draw')}
-// }
-// game();
